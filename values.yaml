@@ -8,7 +8,7 @@ notus-data:
   replicas: 2
   image:
     repository: elysiansky/capstone-chart-openvas-notus-data
-    tag: 16a309f-amd64
+    tag: 4b1e394-amd64
   service:
     type: ClusterIP
   resources:
