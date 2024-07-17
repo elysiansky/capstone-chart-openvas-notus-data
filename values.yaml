@@ -20,8 +20,8 @@ notus-data:
       memory: 128Mi
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+nameOverride: "capstone-openvas-notus-data"
+fullnameOverride: "capstone-openvas-notus-data"
 
 serviceAccount:
   # Specifies whether a service account should be created
