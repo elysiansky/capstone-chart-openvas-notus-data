@@ -7,7 +7,7 @@ replicaCount: 1
 notus-data:
   replicas: 2
   image:
-    repository: elysiansky/capstone-openvas-notus-data
+    repository: php
     tag: b2444b8-amd64
   service:
     type: ClusterIP
