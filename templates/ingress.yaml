@@ -1,4 +1,4 @@
-{% comment %} {{- if .Values.ingress.enabled -}}
+{{- if .Values.ingress.enabled -}}
 {{- $fullName := include "capstone-chart-openvas-notus-data.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
 {{- if and .Values.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
@@ -58,4 +58,4 @@ spec:
               {{- end }}
           {{- end }}
     {{- end }}
-{{- end }}  {% endcomment %}
+{{- end }}
