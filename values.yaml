@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: notusdata 
+  repository: elysiansky/capstone-chart-openvas-notus-data  
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: b2444b8-amd64
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: "capstone-openvas-notus-data"
