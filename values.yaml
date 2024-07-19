@@ -4,20 +4,11 @@
 
 replicaCount: 1
 
-notus-data:
-  replicas: 2
-  image:
-    repository: elysiansky/capstone-openvas-notus-data
-    tag: b2444b8-amd64
-  service:
-    type: ClusterIP
-  resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-    requests:
-      cpu: 100m
-      memory: 128Mi
+image:
+  repository: elysiansky/capstone-openvas-notus-data
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: b2444b8-amd64
 
 imagePullSecrets: []
 nameOverride: "capstone-openvas-notus-data"
@@ -114,3 +105,21 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+notus-data:
+  env:
+    - name: PODSLEEP
+      value: 'no'
+  replicas: 2
+  image:
+    repository: elysiansky/capstone-openvas-notus-data
+    tag: b2444b8-amd64
+  service:
+    type: ClusterIP
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
