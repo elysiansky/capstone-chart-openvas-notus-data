@@ -8,7 +8,7 @@ image:
   repository: elysiansky/capstone-chart-openvas-notus-data  
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: b2444b8-amd64
 
 imagePullSecrets: []
 nameOverride: "capstone-openvas-notus-data"
