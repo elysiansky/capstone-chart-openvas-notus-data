@@ -4,13 +4,6 @@ metadata:
   name: {{ include "capstone-chart-openvas-notus-data.fullname" . }}
   labels:
     {{- include "capstone-chart-openvas-notus-data.labels" . | nindent 4 }}
-readinessProbe:
-  httpGet:
-    path: /healthz  # Replace with your application's health check endpoint (if applicable)
-    port: http  # Assuming the health check endpoint is on the same port as your application
-    initialDelaySeconds: 15  # Increased initial delay to give the application time to start
-    timeoutSeconds: 5  # Adjusted timeout based on your application's typical response time
-    periodSeconds: 10  # Interval between probe attempts
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
