@@ -8,7 +8,7 @@ image:
   repository: elysiansky/capstone-openvas-notus-data
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: c940ab6-amd64
+  tag: f46e022-amd64
 
 imagePullSecrets: []
 nameOverride: "capstone-openvas-notus-data"
@@ -113,7 +113,7 @@ notus-data:
   replicas: 2
   image:
     repository: elysiansky/capstone-openvas-notus-data
-    tag: c940ab6-amd64
+    tag: f46e022-amd64
   service:
     type: ClusterIP
   resources:
