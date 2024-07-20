@@ -123,3 +123,14 @@ notus-data:
     requests:
       cpu: 100m
       memory: 128Mi
+
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: 443  # Updated to use port 443
+
+readinessProbe:
+  httpGet:
+    path: /
+    port: 443  # Updated to use port 443
