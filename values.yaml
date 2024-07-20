@@ -125,16 +125,16 @@ notus-data:
       memory: 128Mi
 
 
-livenessProbe:
-  tcpSocket:
-    path: /
-    port: 9390  # Updated to use port 9390
-  initialDelaySeconds: 30  # Adjust based on application startup time
-  periodSeconds: 10
+#livenessProbe:
+#  tcpSocket:
+#    path: /
+#    port: 9390  # Updated to use port 9390
+#  initialDelaySeconds: 30  # Adjust based on application startup time
+#  periodSeconds: 10
 
-readinessProbe:
-  tcpSocket:
-    path: /
-    port: 9392  # Updated to use port 9392
-  initialDelaySeconds: 30  # Adjust based on application readiness time
-  periodSeconds: 10
+#readinessProbe:
+#  tcpSocket:
+#    path: /
+#    port: 9392  # Updated to use port 9392
+#  initialDelaySeconds: 30  # Adjust based on application readiness time
+#  periodSeconds: 10
