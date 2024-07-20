@@ -126,19 +126,17 @@ notus-data:
 
 livenessProbe:
   enabled: true
-  command:
-    - /bin/sh
-    - -c
-    - /scripts/exit_zero.sh
+  exec:
+    command:
+    - /scripts/exit_zero.sh  # Directly call the script
   initialDelaySeconds: 10
   periodSeconds: 30
 
 readinessProbe:
   enabled: true
-  command:
-    - /bin/sh
-    - -c
-    - /scripts/exit_zero.sh
+  exec:
+    command:
+    - /scripts/exit_zero.sh  # Directly call the script
   initialDelaySeconds: 10
   periodSeconds: 30
 
