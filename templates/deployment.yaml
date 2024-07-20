@@ -41,21 +41,19 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           livenessProbe:
+            {{- if .Values.livenessProbe.enabled }}
             exec:
-              command:
-                - /bin/sh
-                - -c
-                - /scripts/exit_zero.sh
-            initialDelaySeconds: 10
-            periodSeconds: 30
+              command: {{ toYaml .Values.livenessProbe.command | nindent 16 }}
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+            {{- end }}
           readinessProbe:
+            {{- if .Values.readinessProbe.enabled }}
             exec:
-              command:
-                - /bin/sh
-                - -c
-                - /scripts/exit_zero.sh
-            initialDelaySeconds: 10
-            periodSeconds: 30
+              command: {{ toYaml .Values.readinessProbe.command | nindent 16 }}
+            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+            {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
