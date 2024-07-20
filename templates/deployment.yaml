@@ -54,16 +54,6 @@ spec:
          #   initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
          #   periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
          #   {{- end }}
-          readinessProbe:
-            enabled: true  # Assuming you want readiness probe enabled
-            exec:
-              command:
-              - /bin/sh
-              - -c
-              - /scripts/exit_zero.sh
-            initialDelaySeconds: 5
-            periodSeconds: 10
-          
           livenessProbe:
             enabled: true  # Assuming you want liveness probe enabled
             exec:
@@ -73,7 +63,15 @@ spec:
               - /scripts/exit_zero.sh
             initialDelaySeconds: 5
             periodSeconds: 10
-
+          readinessProbe:
+            enabled: true  # Assuming you want readiness probe enabled
+            exec:
+              command:
+              - /bin/sh
+              - -c
+              - /scripts/exit_zero.sh
+            initialDelaySeconds: 5
+            periodSeconds: 10
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
